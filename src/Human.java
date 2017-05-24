@@ -1,8 +1,6 @@
-
-
 public class Human {
 	public SlotMachine slot;
-	protected int readyMoney;
+	protected int readyMoney = 10000;
 	public int sendMoney(int readyMoney){
 		return this.readyMoney;
 	}
@@ -11,6 +9,7 @@ public class Human {
 	}
 
 	public void check() {
+		System.out.println("박성민 : 슬롯머신의 자리가 비여있는지 알아봅니다.");
 		if(slot.check() == true){
 			System.out.println("박성민 : 슬롯머신에 앉습니다.");
 		}
@@ -20,10 +19,20 @@ public class Human {
 	}
 	
 	public void ask_rule() {
-		System.out.println("슬롯머신 : 규칙을 알려줍니다.");
+		System.out.println("박성민 : 슬롯머신의 규칙을 물어봅니다");
+		slot.rule();	
 	}
+	
 	public void insert_money() {
 		System.out.println("박성민 : 슬롯머신에 돈을 투입합니다.");
-		
+		this.readyMoney = slot.insert(this.readyMoney);
+	}
+	
+	public void take_out() {
+		System.out.println("박성민 : 금액을 출금합니다.");		
+	}
+	
+	public void enter() {
+		System.out.println("박성민 : 카지노에 놀러갑니다.");
 	}
 }

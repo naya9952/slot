@@ -1,17 +1,12 @@
-
-
 public class SlotMachine {
 	public SlotRandom slot_random;
-	protected int insertMoney;
+	protected int returnMoney;
 	public int random;
-	public boolean able_game;
-	public SlotMachine() {
-		this.able_game = true;
-	}
+	public boolean able_game = true;
+	
 	public SlotMachine(SlotRandom slot_random){
 		this.slot_random = slot_random;
 	}
-	
 	
 	public int startRandom(){
 		
@@ -27,9 +22,17 @@ public class SlotMachine {
 		{
 			System.out.println("슬롯머신 : 게임을 할 수 없습니다.");
 		}
-		return able_game;
-		
+		return able_game;	
 	}
 	
+	public void rule() {
+		System.out.println("슬롯머신 : 규칙을 알려줍니다.");
+	}
+
+	public int insert(int readyMoney) {
+		System.out.println("슬롯머신 : 배팅을 시작합니다.");
+		this.returnMoney =slot_random.random();
+		return 0;
+	}
 	 
 }
