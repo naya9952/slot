@@ -24,7 +24,7 @@ public class Human {
 	}
 	
 	public int insert_money() {
-		System.out.println("박성민 : 슬롯머신에 돈을 투입합니다.");
+		System.out.println("박성민 : 슬롯머신에 " +this.readyMoney+"원 투입합니다.");
 		this.readyMoney = slot.insert(this.readyMoney);
 		return this.readyMoney;
 	}
