@@ -1,6 +1,8 @@
 public class SlotRandom {
 
-	protected int rd_num;
+	protected int rd_num=0;
+	
+	
 	public int random() {
 		System.out.println("슬롯머신 : 배팅 금액의 X배 되었습니다.");
 		

@@ -31,8 +31,8 @@ public class SlotMachine {
 
 	public int insert(int readyMoney) {
 		System.out.println("슬롯머신 : 배팅을 시작합니다.");
-		this.returnMoney =slot_random.random();
-		return 0;
+		returnMoney =slot_random.random() * readyMoney;
+		return returnMoney;
 	}
 	 
 }

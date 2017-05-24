@@ -3,10 +3,10 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Main director = new Main();
-		director.startScenario();
+		director.start();
 	}
 	
-	void startScenario(){
+	void start(){
 		System.out.println("Director : 시나리오를 시작합니다.");
 		SlotRandom slot_random = new SlotRandom();
 		
@@ -15,7 +15,7 @@ public class Main {
 	
 		System.out.println("Director : 박성민을 생성합니다.");
 		Human ParkSeongMin = new Human(slot);	
-		
+
 		ParkSeongMin.enter();
 		//입장시킴
 		ParkSeongMin.check();
