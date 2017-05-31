@@ -13,6 +13,9 @@ public class Main {
 		System.out.println("Director : 슬롯머신을 생성합니다.");
 		SlotMachine slot = new SlotMachine(slot_random);
 	
+		System.out.println("Director : 카지노를 생성합니다.");
+		
+		
 		System.out.println("Director : 박성민을 생성합니다.");
 		Human ParkSeongMin = new Human(slot);	
 
