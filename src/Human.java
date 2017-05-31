@@ -30,11 +30,11 @@ public class Human {
 	public void insert_money() {
 		while(check_money)
 		{
-			System.out.println("얼마를 투입하시겠습니까? : ");
+			System.out.println("박성민 : 얼마를 투입하시겠습니까? : ");
 			investMoney = input.nextInt();
 			if(investMoney > readyMoney )
 			{
-				System.out.println("배팅금액이 소지 금액보다 많습니다.");
+				System.out.println("박성민 : 배팅금액이 소지 금액보다 많습니다.");
 				investMoney = 0;
 			}
 			else
