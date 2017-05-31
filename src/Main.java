@@ -14,19 +14,22 @@ public class Main {
 		SlotMachine slot = new SlotMachine(slot_random);
 	
 		System.out.println("Director : 카지노를 생성합니다.");
-		
-		
+		Cajino cajino = new Cajino();
+
 		System.out.println("Director : 박성민을 생성합니다.");
 		Human ParkSeongMin = new Human(slot);	
 
-		ParkSeongMin.enter();
+		
+		ParkSeongMin.enter(cajino);
 		//입장시킴
 		ParkSeongMin.check();
 		//게임 가능여부 체크
 		ParkSeongMin.ask_rule();
 		//게임 설명 듣기
 		ParkSeongMin.insert_money();
-		//입출
+		//입금
+		ParkSeongMin.play();
+		//게임플레이
 		ParkSeongMin.take_out();
 		//출금
 	}

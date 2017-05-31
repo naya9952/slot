@@ -21,7 +21,6 @@ public class SlotRandom {
 		System.out.println("슬롯머신 : 배팅 금액의 " + mult + "배 되었습니다.");
 		
 
-		
 		return mult;
 	}
 
