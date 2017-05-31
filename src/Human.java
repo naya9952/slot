@@ -3,8 +3,10 @@ public class Human {
 	public Cajino cajino;
 	public SlotMachine slot;
 	public Scanner input = new Scanner(System.in);
-	protected int readyMoney = 10000;
+	protected int readyMoney = 100000;
 	protected int investMoney;
+	public boolean check_money= true;
+	
 	public Human(SlotMachine slot){
 		this.slot = slot;
 	}
@@ -26,19 +28,23 @@ public class Human {
 	}
 	
 	public void insert_money() {
-		System.out.println("얼마를 투입하시겠습니까? : ");
-		investMoney = input.nextInt();
-		if(investMoney > readyMoney )
+		while(check_money)
 		{
-			System.out.println("배팅금액이 소지 금액보다 많습니다.");
-			investMoney = 0;	
-		}
-		else
-		{	readyMoney = readyMoney - investMoney;
-			System.out.println("박성민 : 슬롯머신에 " +this.investMoney+"원 투입합니다.");
-			slot.insert(this.investMoney);
-		}
-		
+			System.out.println("얼마를 투입하시겠습니까? : ");
+			investMoney = input.nextInt();
+			if(investMoney > readyMoney )
+			{
+				System.out.println("배팅금액이 소지 금액보다 많습니다.");
+				investMoney = 0;
+			}
+			else
+			{	
+				check_money = false;
+				readyMoney = readyMoney - investMoney;
+				System.out.println("박성민 : 슬롯머신에 " +this.investMoney+"원 투입합니다.");
+				slot.insert(this.investMoney);
+			}
+		}	
 	}
 	
 	public void take_out() {
@@ -53,7 +59,7 @@ public class Human {
 	
 	public void play() {
 		System.out.println("박성민 : 게임 레버를 당깁니다.");
-		slot.game_go();
-					
+		slot.game_go();				
 	}
+	
 }

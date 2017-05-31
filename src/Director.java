@@ -1,8 +1,8 @@
-public class Main {
+public class Director {
 
 	public static void main(String[] args) {
 		
-		Main director = new Main();
+		Director director = new Director();
 		director.start();
 	}
 	
@@ -29,7 +29,7 @@ public class Main {
 		ParkSeongMin.insert_money();
 		//입금
 		ParkSeongMin.play();
-		//게임플레이
+		//레버돌리기
 		ParkSeongMin.take_out();
 		//출금
 	}
