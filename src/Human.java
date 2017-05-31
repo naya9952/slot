@@ -48,8 +48,7 @@ public class Human {
 	}
 	
 	public void take_out() {
-		investMoney =slot.endGame();
-		readyMoney = investMoney + readyMoney;
+		readyMoney = slot.output_Money() + readyMoney;
 		System.out.println("박성민 : 총 " + readyMoney + "원을 소지하였습니다.");
 	}
 	

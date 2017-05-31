@@ -39,7 +39,7 @@ public class SlotMachine {
 		System.out.println("슬롯머신 : 잔여 금액 " + returnMoney +"원");	
 	}
 	
-	public int endGame() {	
+	public int output_Money() {	
 		if(returnMoney ==0)
 		{
 		System.out.println("슬롯머신 : 출금 가능한 금액이 없습니다.");
