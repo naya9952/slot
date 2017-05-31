@@ -2,11 +2,11 @@ import java.util.Random;
 
 public class SlotRandom {
 	Random random = new Random();
-	
 	protected int rd_num1= random.nextInt(8) + 1;
 	protected int rd_num2= random.nextInt(8) + 1;
 	protected int rd_num3= random.nextInt(8) + 1;
 	protected int mult;
+	
 	public int random() {
 		System.out.println("슬롯머신 : 1번 "+rd_num1 +"  2번 "+rd_num2 +"  3번 " +rd_num3);
 		if(rd_num1 != rd_num2 && rd_num2 != rd_num3 && rd_num1 != rd_num3){

@@ -1,7 +1,6 @@
 public class Director {
-
+	
 	public static void main(String[] args) {
-		
 		Director director = new Director();
 		director.start();
 	}
@@ -19,7 +18,6 @@ public class Director {
 		System.out.println("Director : 박성민을 생성합니다.");
 		Human ParkSeongMin = new Human(slot);	
 
-		
 		ParkSeongMin.enter(cajino);
 		//입장시킴
 		ParkSeongMin.check();

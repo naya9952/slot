@@ -9,7 +9,6 @@ public class SlotMachine {
 	}
 	
 	public int startRandom(){
-		
 		return random;
 	}
 
@@ -24,12 +23,11 @@ public class SlotMachine {
 		}
 		return able_game;	
 		}
+	
 	public void rule() {
 		System.out.println("슬롯머신 : 규칙을 알려줍니다.");
 		}
 	
-	
-
 	public void insert(int insertCoin) {
 		returnMoney = insertCoin;
 		System.out.println("슬롯머신 : 투입 금액" + returnMoney +"원");
@@ -56,6 +54,5 @@ public class SlotMachine {
 		able_game = false;
 	}
 
-
-	 
+	
 }
