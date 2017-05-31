@@ -7,6 +7,7 @@ public class Cajino {
 				System.out.println("슬롯머신 : 게임을 할 수 있습니다.");
 			}
 			else
+				
 			{
 				System.out.println("슬롯머신 : 게임을 할 수 없습니다.");
 			}
