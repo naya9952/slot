@@ -1,34 +1,34 @@
 import java.util.Scanner;
 public class Human {
 	public Cajino cajino;
-	public SlotMachine slot;
+	public SlotMachine[] slot;
 	public Scanner input = new Scanner(System.in);
 	protected int readyMoney = 100000;
 	protected int investMoney;
 	public boolean check_money= true;
+	public int slot_num;
 	
 	public Human(Cajino cajino){
 		this.cajino = cajino;
 	}
 	
-	public Human(SlotMachine slot){
+	public Human(SlotMachine[] slot){
 		this.slot = slot;
 	}
 
-	public void check() {
+	public Human(SlotMachine slotMachine) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int check() {
 		System.out.println("박성민 : 슬롯머신의 자리가 비여있는지 알아봅니다.");
-		if(cajino.check() == true){
-			System.out.println("박성민 : 슬롯머신에 앉습니다.");
-			//slot.change();
-		}
-		else {
-			System.out.println("박성민 : 사용자가 이미 있습니다.");
-		}
+		slot_num= cajino.check();
+		return slot_num;
 	}
 	
-	public void ask_rule() {
+	public void ask_rule(int i) {
 		System.out.println("박성민 : 슬롯머신의 규칙을 물어봅니다");
-		slot.rule();	
+		slot[i].rule();	
 	}
 	
 	public void insert_money() {
@@ -46,15 +46,15 @@ public class Human {
 				check_money = false;
 				readyMoney = readyMoney - investMoney;
 				System.out.println("박성민 : 슬롯머신에 " +this.investMoney+"원 투입합니다.");
-				slot.insert(this.investMoney);
+				slot[0].insert(this.investMoney);
 			}
 		}	
 	}
 	
 	public void take_out() {
-		readyMoney = slot.output_Money() + readyMoney;
+		readyMoney = slot[0].output_Money() + readyMoney;
 		System.out.println("박성민 : 총 " + readyMoney + "원을 소지하였습니다.");
-		slot.change();
+		slot[0].change();
 	}
 	
 	public void enter() {
@@ -64,7 +64,7 @@ public class Human {
 	
 	public void play() {
 		System.out.println("박성민 : 게임 레버를 당깁니다.");
-		slot.game_go();				
+		slot[0].game_go();				
 	}
 	
 }
