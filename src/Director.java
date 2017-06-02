@@ -1,5 +1,7 @@
 public class Director {
 	public int slot_num;
+	public boolean state = true;
+	public int swch;
 	public static void main(String[] args) {
 		Director director = new Director();
 		director.start();
@@ -35,11 +37,25 @@ public class Director {
 		ParkSeongMin.ask_rule(slot_num);
 		//게임 설명 듣기
 		ParkSeongMin.insert_money(slot_num);
+		
+		Menu menu = new Menu();
+		while(state)
+		{
+			swch = menu.view();
 		//입금
-		ParkSeongMin.play(slot_num);
-		//레버돌리기
-		ParkSeongMin.take_out(slot_num);
-		//출금
+			if(swch ==2)
+			{
+				ParkSeongMin.play(slot_num);
+				//레버돌리기
+			}
+			else if(swch ==3)
+			{
+				ParkSeongMin.take_out(slot_num);
+				//그만하기
+			}
+		
+		
+		}
 	}
 
 }
