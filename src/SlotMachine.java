@@ -51,7 +51,14 @@ public class SlotMachine {
 	}
 
 	public void change() {
-		able_game = false;
+		if(able_game == true)
+		{
+			able_game = false;
+		}
+		else
+		{
+			able_game = true;
+		}
 	}
 
 	

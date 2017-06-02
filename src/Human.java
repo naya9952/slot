@@ -7,15 +7,19 @@ public class Human {
 	protected int investMoney;
 	public boolean check_money= true;
 	
+	public Human(Cajino cajino){
+		this.cajino = cajino;
+	}
+	
 	public Human(SlotMachine slot){
 		this.slot = slot;
 	}
 
 	public void check() {
 		System.out.println("박성민 : 슬롯머신의 자리가 비여있는지 알아봅니다.");
-		if(slot.check() == true){
+		if(cajino.check() == true){
 			System.out.println("박성민 : 슬롯머신에 앉습니다.");
-			slot.change();
+			//slot.change();
 		}
 		else {
 			System.out.println("박성민 : 사용자가 이미 있습니다.");
@@ -50,10 +54,12 @@ public class Human {
 	public void take_out() {
 		readyMoney = slot.output_Money() + readyMoney;
 		System.out.println("박성민 : 총 " + readyMoney + "원을 소지하였습니다.");
+		slot.change();
 	}
 	
-	public void enter(Cajino cajino) {
+	public void enter() {
 		System.out.println("박성민 : 카지노에 놀러갑니다.");
+		cajino.hello();
 	}
 	
 	public void play() {

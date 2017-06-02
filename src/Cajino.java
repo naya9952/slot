@@ -12,12 +12,9 @@ public class Cajino {
 			}
 			return able_game;	
 	}
-	public void rule() {
-		System.out.println("슬롯머신 : 규칙을 알려줍니다.");
-	}
-	public int insert(int readyMoney) {
-		// TODO Auto-generated method stub
-		return 0;
+
+	public void hello() {
+		System.out.println("카지노 : 어서오세요.");
 	}
 
 }

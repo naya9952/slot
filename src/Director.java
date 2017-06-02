@@ -1,3 +1,4 @@
+
 public class Director {
 	public static void main(String[] args) {
 		Director director = new Director();
@@ -6,20 +7,21 @@ public class Director {
 	
 	void start(){
 		System.out.println("Director : 시나리오를 시작합니다.");
-		SlotRandom slot_random = new SlotRandom();
 		
-		System.out.println("Director : 슬롯머신을 생성합니다.");
-		SlotMachine slot = new SlotMachine(slot_random);
-	
 		System.out.println("Director : 카지노를 생성합니다.");
 		Cajino cajino = new Cajino();
-
+		
+		System.out.println("Director : 슬롯머신을 생성합니다.");
+		SlotRandom slot_random = new SlotRandom();
+		SlotMachine slot = new SlotMachine(slot_random);
+		
 		System.out.println("Director : 박성민을 생성합니다.");
-		Human ParkSeongMin = new Human(slot);	
-
-		ParkSeongMin.enter(cajino);
+		Human ParkSeongMin = new Human(cajino);	
+		
+		ParkSeongMin.enter();
 		//입장시킴
 		ParkSeongMin.check();
+		ParkSeongMin = new Human(slot);
 		//게임 가능여부 체크
 		ParkSeongMin.ask_rule();
 		//게임 설명 듣기
