@@ -30,15 +30,15 @@ public class Director {
 		ParkSeongMin.enter();
 		//입장시킴
 		slot_num =ParkSeongMin.check();
-		ParkSeongMin = new Human(slot[slot_num-1]);
+		ParkSeongMin = new Human(slot);
 		//게임 가능여부 체크
-		ParkSeongMin.ask_rule(slot_num-1);
+		ParkSeongMin.ask_rule(slot_num);
 		//게임 설명 듣기
-		ParkSeongMin.insert_money();
+		ParkSeongMin.insert_money(slot_num);
 		//입금
-		ParkSeongMin.play();
+		ParkSeongMin.play(slot_num);
 		//레버돌리기
-		ParkSeongMin.take_out();
+		ParkSeongMin.take_out(slot_num);
 		//출금
 	}
 
