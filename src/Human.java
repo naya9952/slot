@@ -6,14 +6,11 @@ public class Human {
 	public int setGame;
 	Human_input input = new Human_input();
 
-	public Human(Cajino cajino){
+	public Human(Cajino cajino, SlotMachine[] slot){
 		this.cajino = cajino;
-	}
-	
-	public Human(SlotMachine[] slot){
 		this.slot = slot;
 	}
-
+	
 	public int check() {
 		int slot_num;
 		System.out.println("박성민 : 슬롯머신의 자리가 비여있는지 알아봅니다.");
@@ -26,11 +23,18 @@ public class Human {
 		slot[slot_num].rule();	
 	}
 	
-	public void insert_money(int slot_num) {
-		investMoney =input.money(readyMoney);
+	public void insert_money(int slot_num, int insert_coin) {
+		if(insert_coin > readyMoney)
+		{
+			System.out.println("박성민 : 소지금이 부족합니다.");	
+		}
+		else
+		{
+		investMoney = insert_coin;
 		readyMoney = readyMoney - investMoney;
 		System.out.println("박성민 : 슬롯머신에 " +this.investMoney+"원 투입합니다.");
-		slot[slot_num].insert(this.investMoney);		
+		slot[slot_num].insert(this.investMoney);
+		}
 	}
 	
 	public void take_out(int slot_num) {

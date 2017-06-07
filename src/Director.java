@@ -2,6 +2,7 @@ public class Director {
 	public int slot_num;
 	public boolean state = true;
 	public int swch;
+	public int money;
 	public static void main(String[] args) {
 		Director director = new Director();
 		director.start();
@@ -27,12 +28,14 @@ public class Director {
 		cajino = new Cajino(slot);
 		
 		System.out.println("Director : 박성민을 생성합니다.");
-		Human ParkSeongMin = new Human(cajino);	
+		Human ParkSeongMin = new Human(cajino, slot);	
+		Human_input input = new Human_input();
+		
 		
 		ParkSeongMin.enter();
 		//입장시킴
 		slot_num =ParkSeongMin.check();
-		ParkSeongMin = new Human(slot);
+
 		//게임 가능여부 체크
 		ParkSeongMin.ask_rule(slot_num);
 		//게임 설명 듣기	
@@ -43,7 +46,8 @@ public class Director {
 			swch = menu.view();
 			if (swch ==1)
 			{
-				ParkSeongMin.insert_money(slot_num);
+				money =input.money();
+				ParkSeongMin.insert_money(slot_num, money);
 			}
 			else if(swch ==2)
 			{
