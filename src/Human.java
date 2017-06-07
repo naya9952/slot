@@ -48,10 +48,9 @@ public class Human {
 		cajino.hello();
 	}
 	
-	public void play(int slot_num) {
+	public void play(int slot_num, int much_coin) {
 		System.out.println("박성민 : 게임 레버를 당깁니다.");
-		setGame =input.how_much();
-		slot[slot_num].game_go();				
+		slot[slot_num].game_go(much_coin);				
 	}
 	
 }

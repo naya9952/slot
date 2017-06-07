@@ -21,14 +21,18 @@ public class SlotMachine {
 		System.out.println("슬롯머신 : 투입 금액" + returnMoney +"원");
 	}
 
-	public void game_go() {
+	public void game_go(int much_coin) {
 		if(returnMoney ==0)
 		{
 			System.out.println("슬롯머신 : 투입된 금액이 없습니다.");	
 		}
+		else if ( much_coin > returnMoney)
+		{
+			System.out.println("슬롯머신 : 배팅 금액이 투입 금액보다 많습니다.");	
+		}
 		else{
 			System.out.println("슬롯머신 : 배팅을 시작합니다.");
-			returnMoney =slot_random.random() * returnMoney;
+			returnMoney = (returnMoney - much_coin) + (slot_random.random() * much_coin);
 			System.out.println("슬롯머신 : 잔여 금액 " + returnMoney +"원");	
 		}
 	}

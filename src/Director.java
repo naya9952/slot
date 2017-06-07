@@ -3,6 +3,7 @@ public class Director {
 	public boolean state = true;
 	public int swch;
 	public int money;
+	public int invest;
 	public static void main(String[] args) {
 		Director director = new Director();
 		director.start();
@@ -31,7 +32,6 @@ public class Director {
 		Human ParkSeongMin = new Human(cajino, slot);	
 		Human_input input = new Human_input();
 		
-		
 		ParkSeongMin.enter();
 		//¿‘¿ÂΩ√≈¥
 		slot_num =ParkSeongMin.check();
@@ -51,7 +51,8 @@ public class Director {
 			}
 			else if(swch ==2)
 			{
-				ParkSeongMin.play(slot_num);
+				invest = input.how_much();
+				ParkSeongMin.play(slot_num, invest);
 			}
 			else if(swch ==3)
 			{
