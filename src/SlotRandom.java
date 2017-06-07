@@ -8,9 +8,9 @@ public class SlotRandom {
 	protected int mult;
 	
 	public int random() {
-		rd_num1= random.nextInt(8) + 1;
-		rd_num2= random.nextInt(8) + 1;
-		rd_num3= random.nextInt(8) + 1;
+		rd_num1= random.nextInt(6) + 1;
+		rd_num2= random.nextInt(6) + 1;
+		rd_num3= random.nextInt(6) + 1;
 		
 		System.out.println("½½·Ô¸Ó½Å :  "+rd_num1 +"  "+rd_num2 +"  " +rd_num3);
 		if(rd_num1 != rd_num2 && rd_num2 != rd_num3 && rd_num1 != rd_num3){

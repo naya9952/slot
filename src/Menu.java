@@ -4,7 +4,7 @@ public static int select;
 public Scanner input = new Scanner(System.in);
 
 	public int view() {
-		System.out.println("-----SlotMachine-----");
+		System.out.println("--SlotMachine Menu--");
 		System.out.println("1. insert coin ");
 		System.out.println("2. play");
 		System.out.println("3. exit ");
