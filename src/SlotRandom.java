@@ -2,12 +2,16 @@ import java.util.Random;
 
 public class SlotRandom {
 	Random random = new Random();
-	protected int rd_num1= random.nextInt(8) + 1;
-	protected int rd_num2= random.nextInt(8) + 1;
-	protected int rd_num3= random.nextInt(8) + 1;
+	protected int rd_num1;
+	protected int rd_num2;
+	protected int rd_num3;
 	protected int mult;
 	
 	public int random() {
+		rd_num1= random.nextInt(8) + 1;
+		rd_num2= random.nextInt(8) + 1;
+		rd_num3= random.nextInt(8) + 1;
+		
 		System.out.println("½½·Ô¸Ó½Å :  "+rd_num1 +"  "+rd_num2 +"  " +rd_num3);
 		if(rd_num1 != rd_num2 && rd_num2 != rd_num3 && rd_num1 != rd_num3){
 			System.out.println("½½·Ô¸Ó½Å : ²Î¤Ð¤Ð");

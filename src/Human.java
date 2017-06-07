@@ -29,6 +29,7 @@ public class Human {
 	}
 	
 	public void insert_money(int slot_num) {
+		check_money = true;
 		while(check_money)
 		{
 			System.out.println("박성민 : 얼마를 투입하시겠습니까? : ");

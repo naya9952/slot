@@ -35,27 +35,31 @@ public class Director {
 		ParkSeongMin = new Human(slot);
 		//게임 가능여부 체크
 		ParkSeongMin.ask_rule(slot_num);
-		//게임 설명 듣기
-		ParkSeongMin.insert_money(slot_num);
-		
+		//게임 설명 듣기	
 		Menu menu = new Menu();
+		
 		while(state)
 		{
 			swch = menu.view();
-		//입금
-			if(swch ==2)
+			if (swch ==1)
+			{
+				ParkSeongMin.insert_money(slot_num);
+			}
+			else if(swch ==2)
 			{
 				ParkSeongMin.play(slot_num);
-				//레버돌리기
 			}
 			else if(swch ==3)
 			{
 				ParkSeongMin.take_out(slot_num);
-				//그만하기
+				state = false;
+			}
+			else if(swch ==4)
+			{
+				System.out.println("슬롯머신 : 잘못 선택하였습니다. ");
 			}
 		
-		
-		}
-	}
+		}//while(state)
+	}//void start()
 
 }

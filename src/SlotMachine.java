@@ -1,6 +1,6 @@
 public class SlotMachine {
 	public SlotRandom slot_random;
-	protected int returnMoney;
+	protected int returnMoney =0;
 	public int random;
 	public boolean able_game = true;
 	
@@ -17,14 +17,20 @@ public class SlotMachine {
 		}
 	
 	public void insert(int insertCoin) {
-		returnMoney = insertCoin;
+		returnMoney = insertCoin + returnMoney;
 		System.out.println("슬롯머신 : 투입 금액" + returnMoney +"원");
 	}
 
 	public void game_go() {
-		System.out.println("슬롯머신 : 배팅을 시작합니다.");
-		returnMoney =slot_random.random() * returnMoney;
-		System.out.println("슬롯머신 : 잔여 금액 " + returnMoney +"원");	
+		if(returnMoney ==0)
+		{
+			System.out.println("슬롯머신 : 투입된 금액이 없습니다.");	
+		}
+		else{
+			System.out.println("슬롯머신 : 배팅을 시작합니다.");
+			returnMoney =slot_random.random() * returnMoney;
+			System.out.println("슬롯머신 : 잔여 금액 " + returnMoney +"원");	
+		}
 	}
 	
 	public int output_Money() {	
