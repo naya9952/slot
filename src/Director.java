@@ -16,7 +16,6 @@ public class Director {
 		
 		System.out.println("Director : 슬롯머신을 생성합니다.");
 		SlotRandom slot_random = new SlotRandom();
-
 		SlotMachine [] slot = new SlotMachine[3];
 		for(int i =0; i<3; i++)
 		{
@@ -24,8 +23,9 @@ public class Director {
 			slot[i].able_game= false;
 		}
 		slot[1].able_game = true;
-			
+		
 		cajino = new Cajino(slot);
+		
 		System.out.println("Director : 박성민을 생성합니다.");
 		Human ParkSeongMin = new Human(cajino);	
 		

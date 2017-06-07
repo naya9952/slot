@@ -1,12 +1,9 @@
-import java.util.Scanner;
 public class Human {
 	public Cajino cajino;
 	public SlotMachine[] slot;
-	public Scanner input = new Scanner(System.in);
 	protected int readyMoney = 100000;
 	protected int investMoney;
-	public boolean check_money= true;
-
+	Human_input input_ = new Human_input();
 
 	public Human(Cajino cajino){
 		this.cajino = cajino;
@@ -29,24 +26,10 @@ public class Human {
 	}
 	
 	public void insert_money(int slot_num) {
-		check_money = true;
-		while(check_money)
-		{
-			System.out.println("박성민 : 얼마를 투입하시겠습니까? : ");
-			investMoney = input.nextInt();
-			if(investMoney > readyMoney )
-			{
-				System.out.println("박성민 : 배팅금액이 소지 금액보다 많습니다.");
-				investMoney = 0;
-			}
-			else
-			{	
-				check_money = false;
-				readyMoney = readyMoney - investMoney;
-				System.out.println("박성민 : 슬롯머신에 " +this.investMoney+"원 투입합니다.");
-				slot[slot_num].insert(this.investMoney);
-			}
-		}	
+		investMoney =input_.money(readyMoney);
+		readyMoney = readyMoney - investMoney;
+		System.out.println("박성민 : 슬롯머신에 " +this.investMoney+"원 투입합니다.");
+		slot[slot_num].insert(this.investMoney);		
 	}
 	
 	public void take_out(int slot_num) {
