@@ -56,7 +56,7 @@ public class Director {
 			}
 			else if(swch ==3)
 			{
-				ParkSeongMin.take_out(slot_num);
+				ParkSeongMin.take_out(slot_num); 
 				state = false;
 			}
 			else if(swch ==4)
